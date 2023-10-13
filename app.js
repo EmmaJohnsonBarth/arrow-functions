@@ -174,23 +174,27 @@ console.log(Student.courseName());
 
 
 // STEP 11
+console.log('Step11: ');
+
 // How do arrow functions affect constructor functions?
 Student.prototype.scope = function() {
   console.log(this);
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
+// The 'joe' object
 //
 // 2. What is "this" when joe.scopeArrow() is invoked?
+// The global object
 //
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// Regular functions have their own "this" that can change (dynamic scoping), while arrow functions just use the this from where they are written(lexical scoping).  If an arrow function is written at the global level, the "this" will refer to the global object (window).
